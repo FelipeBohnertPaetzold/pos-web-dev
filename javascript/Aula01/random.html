@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Random</title>
+
+
+</head>
+
+<body>
+  <script>
+    const numero = parseInt( Math.random() * 100 );
+
+    console.log( numero );
+
+    let tentativa;
+    let tentativas = 0;
+
+    while ( tentativa !== numero && tentativas <= 9 ) {
+      tentativa = parseInt( prompt( 'Insira o número de 0 a 100:' ) );
+      tentativas++;
+      let diferenca = numero - tentativa
+
+      if ( numero === tentativa ) {
+        alert( 'Acertou' )
+      } else {
+        if ( diferenca < 0 ) {
+          diferenca = diferenca * -1;
+        }
+
+        if ( diferenca >= 50 ) {
+          alert( 'Gelado' );
+        } else if ( diferenca >= 40 ) {
+          alert( 'Frio' );
+        } else if ( diferenca >= 30 ) {
+          alert( 'Morno' );
+        } else if ( diferenca >= 20 ) {
+          alert( 'Quente' );
+        } else if ( diferenca >= 10 ) {
+          alert( 'Fervendo' );
+        } else if ( diferenca >= 1 ) {
+          alert( 'Queimando' );
+        } else {
+          alert( 'Número inválido' )
+        }
+      }
+    }
+
+    if ( tentativas > 9 ) {
+      alert( 'Perdeu' );
+    }
+  </script>
+</body>
+
+</html>

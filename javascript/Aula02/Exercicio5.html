@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercicio 05</title>
+</head>
+
+<body>
+  <script>
+    const produtos = [
+      { nome: 'Pão', preco: 1.30 },
+      { nome: 'Biscoito', preco: 1.10 },
+      { nome: 'Paçoca', preco: 0.50 },
+      { nome: 'Farinha', preco: 2.30 }
+    ]
+
+    var lista = []
+
+    var option = ''
+
+    listProdutos = () => {
+      produtos.forEach( ( p, index ) => {
+        console.log( `${index}) ${p.nome} (R$ ${p.preco.toFixed( 2 )})` )
+      } )
+    }
+
+    adicionarProduto = ( option ) => {
+      lista.push( produtos[option] )
+    }
+
+    calculaCompra = () => {
+      return lista.reduce( ( old, next ) => {
+        return old + next.preco
+      }, 0 ).toFixed( 2 )
+    }
+
+    while ( option !== 'x' ) {
+      listProdutos()
+
+      option = prompt( 'Selecione o produto ou "x" para encerrar' )
+
+      if ( option !== 'x' ) {
+        adicionarProduto( option )
+      } else {
+        alert( `Compra finalizada, total: ${calculaCompra()}` )
+      }
+
+    }
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercicio 03</title>
+</head>
+
+<body>
+  <script>
+    if ( typeof Function.prototype.method !== "Function" ) {
+      Function.prototype.method = function ( name, func ) {
+        this.prototype[name] = func;
+        return this;
+      };
+    }
+
+    function Calculadora() {
+      this.primeiro = 0
+      this.operador = 0
+      this.segundo = 0
+      this.resultado = 0
+    }
+
+    Calculadora.method( 'setPrimeiro', function ( primeiro ) {
+      this.primeiro = primeiro
+      return this
+    } ).method( 'setOperador', function ( operador ) {
+      this.operador = operador
+      return this
+    } ).method( 'setSegundo', function ( segundo ) {
+      this.segundo = segundo
+    } ).method( 'soma', function () {
+      this.resultado = this.primeiro + this.segundo
+    } ).method( 'subtracao', function () {
+      this.resultado = this.primeiro - this.segundo
+    } ).method( 'divisao', function () {
+      this.resultado = this.primeiro / this.segundo
+    } ).method( 'multiplicacao', function () {
+      this.resultado = this.primeiro * this.segundo
+    } ).method( 'calcular', function () {
+      switch ( this.operador ) {
+        case '+': this.soma(); break;
+        case '-': this.subtracao(); break;
+        case '/': this.divisao(); break;
+        case '*': this.multiplicacao(); break;
+      }
+      return this
+    } ).method( 'apresentar', function () {
+      console.log( this.resultado )
+    } )
+  </script>
+</body>
+
+</html>

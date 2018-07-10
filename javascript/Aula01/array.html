@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Array</title>
+</head>
+
+<body>
+
+  <script>
+    var a = [];
+
+    for ( let i = 0; i < 10; i++ ) {
+      const v = parseInt( prompt( `Informe o ${i + 1} número inteiro:` ) );
+
+      const par = v % 2 === 0;
+
+      if ( par ) {
+        a.pop();
+        a.push( v );
+      } else {
+        a.push( v * 5 );
+        a.reverse();
+      }
+    }
+
+    const soma = a.reduce( ( a, b ) => a + b, 0 );
+    const media = soma / a.length;
+
+    console.log( 'Soma:', soma );
+    console.log( 'Média:', media );
+    console.log( 'Tamanho:', a.length )
+  </script>
+</body>
+
+</html>

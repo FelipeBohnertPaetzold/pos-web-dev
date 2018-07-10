@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: 'Open Sans', 'sans-serif';
+}
+
+body {
+  background-color: #ececec;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.header {
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  background-color: #46b19d;
+  border-bottom: 2px solid #308b7a;
+}
+
+.logo {
+  color: #fff;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.logo span  {
+  font-weight: 800;
+}
+
+.header .right img {
+  width: 35px;
+  border: 2px solid #fff;
+  border-radius: 3px;
+}
+
+.header i {
+  margin-left: 10px;
+  margin-right: 5px;
+  color: #fff;
+  margin-top: 5px;
+}
+
+.header i:hover {
+  cursor: pointer;
+}
+
+.header input {
+  background-color: #ececec;
+  font-size: 14px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+.content {
+  padding: 25px;
+  padding-top: 77px;
+}
+
+.content h1 {
+  color: #324c5d;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.content .card {
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  padding: 1px;
+  margin-bottom: 20px;
+}
+
+.content .card .actions {
+  background-color: #dee2e5;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.content .card .actions a {
+  color: #324c5d;
+  margin-right: 15px
+}
+
+.content .card .info {
+  padding: 20px;
+}
+
+.content .card img {
+  width: 80px;
+  border: 3px solid #405868;
+  margin-right: 10px;
+}
+
+.content .card .info h1,
+.content .card .info h2,
+.content .card .info p {
+  font-size: 14px;
+  color: #787878;
+  margin: 0;
+}
+
+.content .card .info h1 {
+  color: #324c5d;
+}
+
+.content .card .info .marker {
+  background-color: #df494a;
+  color: #fff;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 10px;
+}
+
+.content .card .info .time {
+  color: #405868;
+}
+
+.center {
+  text-align: center;
+}
+
+button {
+  background-color: #46b19d;
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: #fff;
+  border: 1px solid #308b7a;
+}
+
+.footer {
+background-color: #324c5d;
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+
+.footer .logo {
+  color: #fff;
+}
+
+.footer .subtitle {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+}
+
+.footer .social-icons i {
+  font-size: 35px;
+  padding: 5px;
+  padding-top: 20px;
+}

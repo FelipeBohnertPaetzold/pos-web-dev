@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Funções</title>
+</head>
+
+<body>
+
+  <script>
+
+    function getInss( salarioBruto ) {
+      if ( salarioBruto <= 1317.07 ) {
+        return 0.08 * salarioBruto;
+      }
+      if ( salarioBruto <= 2195.12 ) {
+        return 0.09 * salarioBruto;
+      }
+      if ( salarioBruto <= 4390.24 ) {
+        return 0.11 * salarioBruto;
+      }
+
+      return 482.93
+    }
+
+    function valoresIRRF( valorBase ) {
+      if ( valorBase <= 1787.77 ) {
+        return { percentual: 0, deducao: 0 }
+      }
+      if ( valorBase <= 2679.29 ) {
+        return { percentual: 0.075, deducao: 134.08 }
+      }
+      if ( valorBase <= 3572.43 ) {
+        return { percentual: 0.15, deducao: 335.03 }
+      }
+      if ( valorBase <= 4463.81 ) {
+        return { percentual: 0.225, deducao: 602.96 }
+      }
+
+      return { percentual: 0.275, deducao: 826.15 }
+    }
+
+    function getIrrf( salarioBruto, dependentes ) {
+      const base = salarioBruto - getInss( salarioBruto ) - ( dependentes * 179.71 )
+      const { percentual, deducao } = valoresIRRF( base )
+      return ( base * percentual ) - deducao
+    }
+
+    function getLiquido( salarioBruto, dependentes ) {
+
+      return salarioBruto - getInss( salarioBruto ) - getIrrf( salarioBruto, dependentes )
+    }
+
+    const salario = parseFloat( prompt( 'Informe o salário bruto' ) )
+    const nDependentes = parseFloat( prompt( 'Informe o número de dependentes' ) )
+
+    console.log( getLiquido( salario, nDependentes ) )
+
+
+  </script>
+</body>
+
+</html>

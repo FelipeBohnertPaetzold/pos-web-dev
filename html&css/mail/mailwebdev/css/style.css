@@ -1,0 +1,209 @@
+* {
+   box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.only-mobile {
+    display: none;
+}
+body {
+    background-color: #ececec;
+    padding: 20px;
+    padding-left: 235px;
+    padding-top: 140px;
+}
+.menu {
+    background-color: #0b2321;  
+    width: 215px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+.logo {
+    background-color: #081817;
+    padding: 42px;
+    padding-left: 22px;
+    color: #fff;
+    font-size: 29px;
+    font-weight: 200;
+    margin-bottom: 20px;
+}
+.logo span {
+    font-family: 'Passion One', cursive;
+}
+.menu .item {
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+}
+.menu .item i {
+    float: left;
+    font-size: 20px;
+    margin-right: 15px;
+    color: rgba(255,255,255, 0.3);
+}
+.menu .item .text {
+    float: left;
+    color: rgba(255,255,255, 0.4);
+}
+.mark {
+    float: right;
+    background-color: #ff3d7f;
+    padding: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: -5px;
+    border-radius: 4px;
+    color: #fff;
+}
+.menu .item .mark.blue {
+    background-color: #1c7deb;
+}
+.menu .item .mark.green {
+    background-color: #4eb96c;
+}
+.menu .item .mark.orange {
+    background-color: #eb651c;
+}
+.menu .item .mark.yellow {
+    background-color: #eb8c1c;
+}
+.menu .item.active .text,
+.menu .item.active i {
+    color: #fff;
+}
+.line {
+    height: 2px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.top {
+    padding-left: 215px;
+    background-color: #fff;
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.16);
+    position: fixed;
+    width: 100%;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.top input {
+    float: left;
+    margin: 40px;
+    background-color: #f4f4f4;
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-image: url(../img/search.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 10px;
+    padding-left: 35px;
+    box-shadow: inset 2px 2px 5px 0 rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    outline: none;
+}
+.top .notifications {
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.top .notifications img {
+    width: 60px;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+.top .notifications i {
+    float: left;
+    font-size: 28px;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 15px;
+}
+.top .notifications i .mark {
+    position: absolute;
+    font-size: 16px;
+    margin-top: -40px;
+    margin-left: 20px;
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.content .item {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+.content .item h1,
+.content .item h2,
+.content .item p {
+    font-size: 16px;
+    color: #1f1e1e;
+}
+.content h1 {
+    font-weight: bold;
+}
+.content .item p {
+    opacity: 0.5;
+}
+.content .item img {
+    width: 70px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid #fff;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.content .item:target {
+    background: red;
+}
+
+.backMenu {
+    display: none;
+    float: right;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu {
+        margin-left: -260px;
+        transition: all 1s linear;
+    }
+    .backMenu {
+        display: block;
+    }
+    .top {
+        padding-left: 0;
+    }
+    .top input {
+        display: none;
+    }
+    .only-mobile {
+        display: block;
+        float: left;
+        padding: 20px;
+        font-size: 30px;
+    }
+    .only-mobile a {
+        color: #000;
+        text-decoration: none;
+    }
+    .only-mobile i {
+        margin-right: 15px;
+    }
+    body {
+        padding-left: 20px;
+    }
+    .menu:target {
+        margin-left: 0;
+    }
+}

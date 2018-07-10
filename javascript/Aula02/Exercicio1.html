@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercício 01</title>
+</head>
+
+<body>
+
+  <script>
+    carro = {
+      velocidade: 0,
+      distancia: 0,
+      ligado: false,
+      tempo: 0,
+      acelerar: function () {
+        this.velocidade += 10
+      },
+      frear: function () {
+        this.velocidade -= 10
+      },
+      andar: function () {
+        this.distancia += this.velocidade
+        this.tempo++
+      },
+      ligar: function () {
+        this.ligado = true
+      },
+      desligar: function () {
+        this.ligado = false
+      },
+      getVelocidadeMedia: function () {
+        var media = this.distancia / this.tempo
+        console.log( media )
+      }
+    }
+
+    carro.acelerar()
+    carro.acelerar()
+    carro.andar()
+
+    console.log( carro )
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercicio 04</title>
+</head>
+
+<body>
+
+  <script>
+    function Pessoa( _telefone, _endereco, _estado, _cidade ) {
+      this._telefone = _telefone
+      this._endereco = _endereco
+      this._estado = _estado
+      this._cidade = _cidade
+    }
+
+    Pessoa.prototype = {
+      get telefone() {
+        return this._telefone
+      },
+      set telefone( _telefone ) {
+        this._telefone = _telefone
+      },
+      get endereco() {
+        return this._endereco
+      },
+      set endereco( _endereco ) {
+        this._endereco = _endereco
+      },
+      get estado() {
+        return this._estado
+      },
+      set estado( _estado ) {
+        this._estado = _estado
+      },
+      get cidade() {
+        return this._cidade
+      },
+      set cidade( _cidade ) {
+        this._cidade = _cidade
+      }
+    }
+
+    function Fisica( _telefone, _endereco, _estado, _cidade, _nome, _cpf ) {
+      Pessoa.apply( this, arguments )
+      this._nome = _nome
+      this._cpf = _cpf
+    }
+
+    Fisica.prototype = Object.assign( Pessoa.prototype, {
+      get nome() {
+        return this._nome
+      },
+      set nome( _nome ) {
+        this._nome = _nome
+      },
+      get cpf() {
+        return this._cpf
+      },
+      set cpf( _cpf ) {
+        this._cpf = _cpf
+      }
+    } )
+
+    function Juridica( _telefone, _endereco, _estado, _cidade, _cnpj, _razaoSocial, _nomeFantasia ) {
+      Pessoa.apply( this, arguments )
+      this._cnpj = _cnpj
+      this._razaoSocial = _razaoSocial
+      this._nomeFantasia = _nomeFantasia
+    }
+
+    Juridica.prototype = Object.assign( Pessoa.prototype, {
+      get cnpj() {
+        return this._cnpj
+      },
+      set cnpj( _cnpj ) {
+        this._cnpj = _cnpj
+      },
+      get razaoSocial() {
+        return this._razaoSocial
+      },
+      set razaoSocial( _razaoSocial ) {
+        this._razaoSocial = _razaoSocial
+      },
+      get nomeFantasia() {
+        return this._nomeFantasia
+      },
+      set nomeFantasia( _nomeFantasia ) {
+        this._nomeFantasia = _nomeFantasia
+      }
+    } )
+  </script>
+</body>
+
+</html>

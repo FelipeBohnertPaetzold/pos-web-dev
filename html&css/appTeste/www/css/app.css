@@ -1,0 +1,52 @@
+.avatar-bg {
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  background-color: red;
+  opacity: 1;
+}
+
+.avatar-container {
+  display: flex;
+  align-items: center;
+  background-image: url(../img/bg.jpg);
+  justify-content: center;
+  flex-direction: column;
+  line-height: 1.5;
+}
+
+.avatar .avatar-small img {
+  width: 50px;
+}
+
+.avatar.cover {
+  width: 50px;
+  height: 50px;
+  background-position: top;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.separator {
+  background-color: #f1f1f1;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.flexbox {
+  display: flex;
+  align-items: center;
+}
+
+.competencia {
+  padding-top: 10px;
+}
+
+.competencia .tecnologia {
+  min-width: 80px;
+}

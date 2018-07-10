@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exemplo 01</title>
+
+  <link rel="stylesheet" href="../lib/jasmine-core/jasmine.css">
+
+  <script src="../lib/jasmine-core/jasmine.js"></script>
+  <script src="../lib/jasmine-core/jasmine-html.js"></script>
+  <script src="../lib/jasmine-core/boot.js"></script>
+  <script>
+    function multiplica( n1, n2 ) {
+      return n1 * n2
+    }
+
+    describe( 'Função que multiplica 2 números', function () {
+      it( 'Valida multiplicação de 2 x 6', function () {
+        expect( multiplica( 2, 6 ) ).toEqual( 12 )
+      } )
+    } );
+  </script>
+</head>
+
+<body>
+
+  <script>
+
+  </script>
+</body>
+
+</html>

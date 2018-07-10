@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercício 01</title>
+
+  <link rel="stylesheet" href="../lib/jasmine-core/jasmine.css">
+
+  <script src="../lib/jasmine-core/jasmine.js"></script>
+  <script src="../lib/jasmine-core/jasmine-html.js"></script>
+  <script src="../lib/jasmine-core/boot.js"></script>
+  <script>
+    function calculadora( v1, v2, operador ) {
+      switch ( operador ) {
+        case 'x': return ( v1 * v2 ); break;
+        case '-': return ( v1 - v2 ); break;
+        case '/': return ( v1 / v2 ); break;
+        case '+': return ( v1 + v2 ); break;
+        default: throw new Error( 'Operador inválido' );
+      }
+    }
+
+    describe( 'Função que testa a calculadora', function () {
+      it( 'Valida multiplicação de 2 x 6', function () {
+        expect( calculadora( 2, 6, 'x' ) ).toEqual( 12 )
+      } )
+      it( 'Valida a soma de 2 + 4', function () {
+        expect( calculadora( 2, 4, '+' ) ).toEqual( 6 )
+      } )
+      it( 'Valida a divisão de 6 / 3', function () {
+        expect( calculadora( 6, 3, '/' ) ).toEqual( 2 )
+      } )
+      it( 'Valida a subtração de 6 - 3', function () {
+        expect( calculadora( 6, 3, '-' ) ).toEqual( 3 )
+      } )
+      it( 'Valida erro no envio de operador inválido', function () {
+        expect( function () { return calculadora( 6, 3, 'a' ) } ).toThrow( new Error( 'Operador inválido' ) )
+      } )
+    } );
+  </script>
+</head>
+
+<body>
+
+  <script>
+
+  </script>
+</body>
+
+</html>

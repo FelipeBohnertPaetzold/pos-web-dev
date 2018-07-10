@@ -1,0 +1,15 @@
+.progress-bar {
+  width: 100%;
+  padding: 3px;
+  border-radius: 3px;
+  border: 1px solid #eee;
+  text-align: center;
+  color: #eee;
+}
+
+.progress-bar-fill {
+  display: block;
+  padding: 3px;
+  width: attr(data-progress);
+  border-radius: 3px;
+}

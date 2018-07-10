@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body ng-controller="indexController">
+  <h1>Cadastro de produtos</h1>
+  <p>Gerenciamento de produtos em estoque.</p>
+
+  <div ng-hide="exibeFormulario">
+    <button ng-click="exibeFormulario = true">Novo produto</button>
+    <input type="search" ng-model="filtro" placeholder="Procurar produto...">
+  </div>
+
+  <div class="form" ng-show="exibeFormulario">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" placeholder="Nome" ng-model="produto.nome">
+
+    <label for="estoque">Estoque:</label>
+    <input type="number" id="estoque" placeholder="Estoque" ng-model="produto.estoque">
+
+    <label for="preco">Preço:</label>
+    <input type="number" id="preco" placeholder="Preço" ng-model="produto.preco">
+
+    <div class="error" ng-show="erro">{{ erro }}</div>
+
+    <div class="actions">
+      <button class="left" ng-click="cancelar()">Cancelar</button>
+      <button class="right" ng-click="salvar()">Salvar</button>
+    </div>
+  </div>
+  <table>
+    <tr>
+      <td>Código</td>
+      <td>Nome</td>
+      <td>Estoque</td>
+      <td>Preço</td>
+      <td></td>
+    </tr>
+    <tr ng-show="!produtos.length">
+      <td class="empty" colspan="4">Nenhum produto cadastrado até o momento</td>
+    </tr>
+    <tr ng-repeat="produto in produtos | filter:filtro">
+      <td># {{ produto.id }}</td>
+      <td>{{ produto.nome }}</td>
+      <td>{{ produto.estoque }}</td>
+      <td>{{ formatarValor(produto.preco) }}</td>
+      <td class="align-right">
+        <a ng-click="editar(produto.id)" title="Editar">
+          <i class="material-icons">edit</i>
+        </a>
+        <a ng-click="excluir(produto.id)" title="Excluir">
+          <i class="material-icons">delete</i>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>
+        <strong>{{ totalEstoque() }}</strong>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <script src="./angular.min.js"></script>
+  <script src="./index.js"></script>
+  <script src="./produtos_service.js"></script>
+</body>
+
+</html>
