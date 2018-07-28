@@ -1,0 +1,12 @@
+{
+  "name": "notas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.7.2",
+    "angular-route": "^1.7.2",
+    "moment": "^2.22.2"
+  },
+  "devDependencies": {}
+}
