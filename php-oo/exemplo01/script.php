@@ -1,9 +1,10 @@
 <?php
-require 'Mammalia.php';
+require 'autoload.php';
 
-$lobo = new Mammalia();
-$cachorro = new Mammalia();
-$urso = new Mammalia();
+$lobo = new Carnivora('lobo');
+$cachorro = new Carnivora('cachorro');
+$urso = new Carnivora('urso');
+
 
 var_dump($lobo);
 var_dump($cachorro);

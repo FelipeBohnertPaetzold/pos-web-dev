@@ -1,0 +1,21 @@
+{
+  "name": "lipe/exercicio01",
+  "authors": [
+    {
+      "name": "Felipe Bohnert Paetzold",
+      "email": "felipe.paetzold@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "": "src"
+    }
+  },
+  "config": {
+    "bin-dir": "bin/"
+  },
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "^7.3"
+  }
+}

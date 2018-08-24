@@ -1,7 +1,7 @@
 <?php
-require 'Mammalia.php';
+require 'autoload.php';
 
-$lobo = new Mammalia();
+$lobo = new Carnivora('lobo');
 $cachorro = clone $lobo;
 
 if ($lobo == $cachorro) {

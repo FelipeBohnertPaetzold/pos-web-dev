@@ -1,8 +1,8 @@
 <?php
-require 'Mammalia.php';
+require 'autoload.php';
 
-$lobo = new Mammalia();
-$cachorro = new Mammalia();
+$lobo = new Carnivora('lobo');
+$cachorro = new Carnivora('cachorro');
 
 if (spl_object_hash($lobo) != spl_object_hash($cachorro)) {
   echo 'Passou no teste';
